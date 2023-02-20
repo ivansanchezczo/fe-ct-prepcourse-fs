@@ -141,6 +141,22 @@ function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+   //let variable=false
+   //for (let i=0; i<array.length;i++){
+      //if (array[i]===array[0]) {
+        // variable=true
+      //} else variable=false 
+      //}
+   //return variable
+   //var cumplecondición= array.every(num => {
+     // return num === array [0]
+   //}) 
+   //return cumplecondición 
+   var primero=array[0]
+   for (i=1;i<array.length;i++){
+      if (primero!==array[i]) return false
+   }
+   return true
 }
 
 function mesesDelAño(array) {
@@ -148,18 +164,42 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   // res =[]
+   // for (i=0;i<array.length;i++){
+   //    if(array[i]==="Enero"||array[i]==="Marzo"||array[i]==="Noviembre")
+   //    res.push(array[i])
+   // } 
+   // if (res.length!==3) return "No se encontraron los meses pedidos"
+   // return res  
+
+   var papa=array.includes("Enero")&&array.includes("Marzo")&&array.includes("Noviembre")
+   if (papa===false) return "No se encontraron los meses pedidos"
+   var nuevoarray=array.filter (word => word==="Enero" || word==="Marzo" || word==="Noviembre")
+   return (nuevoarray)
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   res=[0,1,2,3,4,5,6,7,8,9,10]
+   arr=res.map(function(elem){
+      return elem*6
+   })
+   return arr
+   // res=[]
+   // for (i=0;i<11;i++){
+   //    res.push(6*i)
+   // }
+   // return res
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   let arr=array.filter (elem=> elem>100)
+   return arr
 }
 
 /* ----------------------------------------------------------------------------------
@@ -173,7 +213,16 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   let arr=[]
+   for (i=0;i<10;i++){
+   num=num+2
+   if (num===i) break;
+   arr.push(num)
 }
+   if (i===10) return (arr)
+   else return ("Se interrumpió la ejecución")
+}
+
 
 function continueStatement(num) {
    // Iterar en un bucle aumentando en 2 el número recibido hasta un límite de 10 veces.
@@ -182,6 +231,15 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   let arr=[]
+   for (i=0;i<10;i++){
+      if (i===5) {
+         continue
+      }
+      num=num+2
+      arr.push(num)
+   }
+   return arr;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/

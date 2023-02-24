@@ -6,6 +6,7 @@ function deObjetoAarray(objeto) {
    // Estos elementos debe ser cada par clave:valor del objeto recibido.
    // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
    // Tu código:
+   
 }
 
 function numberOfCharacters(string) {
@@ -22,6 +23,17 @@ function capToFront(string) {
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
+   var b= string.split('') 
+   var c=[]
+   var d=[]
+   b.forEach(element => {
+      if (element===element.toUpperCase()) {
+         c.push(element)
+      } else if (element===element.toLowerCase()) {
+         d.push(element)
+      }
+   });
+   return c.join('')+d.join('')
 }
 
 function asAmirror(frase) {
@@ -29,12 +41,30 @@ function asAmirror(frase) {
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
+   var b=[]
+   var c=frase.split(' ')
+   for (let i=0;i<c.length;i++){
+      b.push(c[i].split('').reverse().join(''))
+   }
+   return (b.join(' '))
+   // var b=frase.split(' ')
+   // var d=[]
+   // for (let i=0;i<b.length;i++){
+   //  d.push(b[i].split('').reverse().join(''))
+   // }
+   // return (d.join(' '))
 }
 
 function capicua(numero) {
    // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
    // Caso contrario: "No es capicua".
    // Tu código:
+   // let d=numero.toString().split('').reverse().join('')
+   // if (d==numero) return ("Es capicua")
+   // else return ("No es capicua")
+   numero=numero.toString()
+   if (numero.split("").reverse().join('')===numero) return "Es capicua"
+   else return "No es capicua" 
 }
 
 function deleteAbc(string) {
